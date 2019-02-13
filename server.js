@@ -2,6 +2,7 @@ const express = require('express')
 const exphbs = require('express-handlebars');
 const app = express();
 const post = require('./controllers/posts')(app);
+const comment = require('./controllers/comments.js')(app);
 const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
 
