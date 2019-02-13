@@ -1,21 +1,13 @@
 //comments.js
 const Post = require('../models/post');
 const Comment = require('../models/comment');
-const bodyParser = require('body-parser');
-const expressValidator = require('express-validator');
 
 module.exports = function(app) {
-
-    // Use Body Parser
-    app.use(bodyParser.json());
-    app.use(bodyParser.urlencoded({ extended: false }));
-
-    // Add after body parser initialization!
-    app.use(expressValidator());
 
 
     // CREATE Comment
     app.post("/posts/:postId/comments", function(req, res) {
+        var currentUser = req.user;
       // INSTANTIATE INSTANCE OF MODEL
       const comment = new Comment(req.body);
 
