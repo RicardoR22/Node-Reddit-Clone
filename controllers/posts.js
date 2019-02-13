@@ -12,10 +12,16 @@ module.exports = function(app) {
     // Add after body parser initialization!
     app.use(expressValidator());
 
-    
+
     // Index
     app.get('/', (req, res) => {
-        res.render('posts-index', { msg: 'handlebars are cool'});
+        Post.find({})
+        .then(posts => {
+        res.render("posts-index", { posts });
+        })
+        .catch(err => {
+        console.log(err.message);
+        });
     })
 
     // New
