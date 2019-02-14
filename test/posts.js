@@ -20,6 +20,11 @@ describe('Posts', function() {
       url: 'https://www.google.com',
       summary: 'post summary'
   };
+
+  after(function () {
+    Post.findOneAndDelete(newPost);
+  });
+  
   it('Should create with valid attributes at POST /posts/new', function(done) {
   // Checks how many posts there are now
   Post.estimatedDocumentCount()
@@ -53,7 +58,5 @@ describe('Posts', function() {
         done(err);
     });
 });
-after(function () {
-  Post.findOneAndDelete(newPost);
-});
+
 });
