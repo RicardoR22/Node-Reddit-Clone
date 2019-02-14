@@ -1,7 +1,9 @@
 <!-- views/posts-show.handlebars -->
 
 <div class="row">
-  <div class="col-sm-6 col-sm-offset-3">
+  <div class="col-sm-3 col-sm-offset-6">
+    <br>
+    <br>
     <a href="{{post.url}}" class="lead">{{post.title}}</a>
     <p>{{post.summary}}</p>
     <p>{{post.author.username}}</p>
@@ -24,5 +26,6 @@
 
 
 {{#each post.comments}}
+<br>
   {{> comment comment=this postId=../post._id}}
 {{/each}}

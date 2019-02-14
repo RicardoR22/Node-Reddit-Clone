@@ -19,13 +19,19 @@
                 <a href="/n/{{this.subreddit}}">{{this.subreddit}}</a>
                 </div>
                 <br>
+                <div class="button-container">
                 <form class="vote-up" data-id="{{this._id}}">
-                  <button type="submit">Vote Up</button>
+                    <div>
+                        <button type="submit">Vote Up</button>
+                    </div>
                 </form>
-                |
+                Score: {{this.voteScore}}
                 <form class="vote-down" data-id="{{this._id}}">
-                  <button type="submit">Vote Down</button>
+                    <div>
+                        <button type="submit">Vote Down</button>
+                    </div>
                 </form>
+                </div>
             </li>
             {{/each}}
         </ul>
