@@ -14,7 +14,7 @@
             <li class="list-group-item">
                 <div class="lead"><a href="/posts/{{this._id}}">{{this.title}}</a></div>
                 <a href="{{this.url}}" target="_blank">{{this.url}}</a>
-                <div><small>{{this.author.username}}</small></div>
+                <div><small>Posted by: {{this.author.username}}</small></div>
                 <div class="text-right">
                 <a href="/n/{{this.subreddit}}">{{this.subreddit}}</a>
                 </div>
@@ -22,13 +22,13 @@
                 <div class="button-container">
                 <form class="vote-up" data-id="{{this._id}}">
                     <div>
-                        <button type="submit">Vote Up</button>
+                        <button type="submit">&#9650;</button>
                     </div>
                 </form>
                 Score: {{this.voteScore}}
                 <form class="vote-down" data-id="{{this._id}}">
                     <div>
-                        <button type="submit">Vote Down</button>
+                        <button type="submit">&#9660;</button>
                     </div>
                 </form>
                 </div>
